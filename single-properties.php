@@ -21,6 +21,7 @@ $longitude = ( isset($gmap['lng']) && $gmap['lng'] ) ? $gmap['lng'] : '';
 		$title = get_the_title();
 		// $title = strtolower( $title );
 		// $title = ucwords($title);
+		$coupObj = get_field_object('coupon_code');
 		$coupon_code = get_field("coupon_code");
 		$community_name = get_field("community_name");
 		$address = get_field("address");
@@ -38,7 +39,7 @@ $longitude = ( isset($gmap['lng']) && $gmap['lng'] ) ? $gmap['lng'] : '';
 			<div class="property-info">
 				<div class="pcol left">
 					<div class="group">
-						<div class="info"><strong>Coupon Code:</strong> <?php echo $coupon_code ?></div>
+						<div class="info"><strong><?php echo $coupObj['label']; ?></strong> <?php echo $coupon_code ?></div>
 						<div class="info"><strong>Address:</strong> <?php echo $address ?></div>
 					</div>
 
